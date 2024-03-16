@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar/Navbar"
 import "../globals.css"
 export const metadata = {
   title: 'Postre | Read, Write and Inspire',
@@ -11,7 +12,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-        <body>
+        <body className="min-h-screen">
+          <Navbar/>
           {children}
         </body>
     </html>
