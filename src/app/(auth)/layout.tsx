@@ -11,7 +11,7 @@ export default function AuthLayout({
 }) {
   return (
     <html lang="en">
-        <body>
+        <body className="flex min-h-screen justify-center items-center">
             {children}
         </body>
     </html>
