@@ -1,4 +1,5 @@
 import { LoginForm } from "@/components/UserJoinForm/LoginForm";
+import Link from "next/link";
 
 const LoginPage = () => {
     return (
@@ -11,7 +12,10 @@ const LoginPage = () => {
             {/* Signup Form Here */}
             <div className=" flex flex-col items-center justify-center">
                 <div className="p-[2rem] border-[1.5px] rounded-md shadow-lg">
-                    <LoginForm/>                
+                    <LoginForm/>   
+                    <p className="text-center mt-[1rem]">
+                        Don't have an account ? <Link href="/login" className="text-blue-400">Register</Link>
+                    </p>             
                 </div>
             </div>
         </div>
