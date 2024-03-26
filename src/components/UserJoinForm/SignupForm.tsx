@@ -15,12 +15,6 @@ import {
 import { Input } from "@/components/ui/input"
 
 const SignUpSchema = z.object({
-    username: z.string().min(2, {
-        message: "Username must be at least 2 characters long"
-    }).max(30, {
-        message: "Username can be only 30 characters long"
-    }),
-
     email: z.string().email(),
 
     password: z.string().min(8, {
@@ -34,7 +28,6 @@ export function SignUpForm() {
     const form = useForm<z.infer<typeof SignUpSchema>>({
         resolver: zodResolver(SignUpSchema),
         defaultValues: {
-            username: "",
             email: "",
             password: "",
         }
@@ -55,20 +48,6 @@ export function SignUpForm() {
                 </p>
             </div>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 min-w-[300px]">
-                <FormField
-                    control={form.control}
-                    name="username"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Username</FormLabel>
-                            <FormControl>
-                                <Input placeholder="Enter Your Username" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-
                 <FormField
                     control={form.control}
                     name="email"
